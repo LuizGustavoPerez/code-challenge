@@ -1,0 +1,84 @@
+<div *ngFor="let wine of pagedItems" class="accordion" id="wine{{wine.id}}">
+  <div class="card">
+    <div class="card-header" [attr.id]="'heading' + wine.id">
+      <h5 class="mb-0">
+        <button class="btn btn-link" type="button" [attr.data-toggle]="'collapse'" [attr.data-target]="'#collapse' + wine.id">
+          {{wine.id}} - {{wine.name}} - {{wine.price | currency:'EUR' }}
+        </button>
+      </h5>
+    </div>
+
+    <div [attr.id]="'collapse' + wine.id" class="collapse">
+      <div class="card-body">
+        <div class="row">
+          <div class="col-5">
+            <h4>{{wine.name}}</h4>
+          </div>
+          <div class="col-7">
+            <h6><b>VINEYARD: </b> <span>{{wine.vineyard}}</span></h6>
+            <h6><b>YEAR: </b> <span>{{wine.year}}</span></h6>
+            <h6><b>PRICE: </b> <span>{{wine.price | currency:'EUR'}}</span></h6>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row float-right">
+  <button class="btn btn-primary" (click)="collapseInput()">+</button>
+</div>
+<div id="wineDataInput" class="collapse" [class.show]="show">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-12">
+        <div class="card">
+          <form novalidate class="ng-untouched ng-prisrtine ng-invalid" [formGroup]="form">
+            <div class="row">
+              <div class="col-4">
+                <span>Name: </span>
+                <input type="text" formControlName="name">
+              </div>
+              <div class="col-4">
+                <span>Year: </span>
+                <input type="number" formControlName="year">
+              </div>
+              <div class="col-4">
+                <span>Vineyard: </span>
+                <input type="text" formControlName="vineyard">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-4">
+                <span>Price: </span>
+                <input type="number" formControlName="price">
+              </div>
+              <div class="col-4"></div>
+              <div class="col-4">
+                <button class="btn btn-secondary float-right" [disabled]="!form.valid" (click)="addWine(form)">ADD</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div>
+  <div class="container">
+      <div class="text-center">
+          <!-- pager -->
+          <ul *ngIf="pager.pages && pager.pages.length" class="pagination">
+              <li [ngClass]="{disabled:pager.currentPage === 1}">
+                  <a (click)="setPage(pager.currentPage - 1)">Previous</a>
+              </li>
+              <li *ngFor="let page of pager.pages" [ngClass]="{active:pager.currentPage === page}">
+                  <a (click)="setPage(page)">{{page}}</a>
+              </li>
+              <li [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
+                  <a (click)="setPage(pager.currentPage + 1)">Next</a>
+              </li>
+          </ul>
+      </div>
+  </div>
+</div>
+  

@@ -1,0 +1,11 @@
+$navColorActive: rgba(28, 61, 207, 0.904);
+.card{
+    margin:5%;
+    .active{
+        background-color: $navColorActive;
+        border-radius: 5px;     //Radius configured
+        a{
+            color:white;
+        }
+    }
+}
