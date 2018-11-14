@@ -9,7 +9,7 @@ Before run `ng serve` you need to install nodeJS and install all required npm pa
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
 ## Production link
-
+https://angular-code-challenge.herokuapp.com/wine
 
 ## Considerations
 I used the Angular quickstart project as a base for the application, it's written in TypeScript and uses bootstrap 4 and scss to style.
