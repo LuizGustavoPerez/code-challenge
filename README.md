@@ -17,11 +17,12 @@ I used the Angular quickstart project as a base for the application, it's writte
 I decided to create two components separately for reuse.
 
 The path sctructure is as bellow:
-    |-app
-        -beer (beer component)
-        -wine (wine component)
-        -model (models to beer and wine class)
-        -services (services separately to beer and wine, where I configured services to add and get the bottles)
-        -app (app component)
-        -in-memory-data (Service to simulate a database, I decided to get it out from the path 'services' to don't forget delete)
+
+    app    
+        beer (beer component) 
+        wine (wine component)        
+        model (models to beer and wine class)        
+        services (services separately to beer and wine, where I configured services to add and get the bottles)        
+        app (app component)       
+        in-memory-data (Service to simulate a database, I decided to get it out from the path 'services' to don't forget delete)
 
