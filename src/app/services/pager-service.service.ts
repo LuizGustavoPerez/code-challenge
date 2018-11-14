@@ -4,7 +4,7 @@ import { Injectable } from '@angular/core';
     providedIn: 'root'
   })
 
-//This PagerService was copied from 
+//This PagerService class was copied from 
 //http://jasonwatmore.com/post/2016/08/23/angular-2-pagination-example-with-logic-like-google 
 //and adapted to my application
 export class PagerService {

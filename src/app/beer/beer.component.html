@@ -1,4 +1,4 @@
-<div *ngFor="let beer of beers" class="accordion" id="beer{{beer.id}}">
+<div *ngFor="let beer of pagedItems" class="accordion" id="beer{{beer.id}}">
   <div class="card">
     <div class="card-header" [attr.id]="'heading' + beer.id">
       <h5 class="mb-0">
@@ -66,4 +66,21 @@
         </div>
       </div>
     </div>
+</div>
+<div>
+  <div class="container">
+      <div class="text-center">
+          <ul *ngIf="pager.pages && pager.pages.length" class="pagination">
+              <li [ngClass]="{disabled:pager.currentPage === 1}">
+                  <a (click)="setPage(pager.currentPage - 1)">Previous</a>
+              </li>
+              <li *ngFor="let page of pager.pages">
+                  <a (click)="setPage(page)" [ngClass]="{active:pager.currentPage === page}">{{page}}</a>
+              </li>
+              <li [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
+                  <a (click)="setPage(pager.currentPage + 1)">Next</a>
+              </li>
+          </ul>
+      </div>
+  </div>
 </div>

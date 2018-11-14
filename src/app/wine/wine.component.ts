@@ -67,6 +67,7 @@ export class WineComponent implements OnInit {
     this.show = !this.show;
   }
 
+  //function to add a Wine and get the data from form
   addWine(wineData) {
     if (!wineData.valid) {
       alert("Form invalid!");
@@ -78,6 +79,7 @@ export class WineComponent implements OnInit {
     newWine.vineyard = wineData.value.vineyard;
     newWine.year = wineData.value.year;
 
+    //refresh the object and page's pager.
     this.wineService.addWine(newWine)
       .subscribe(wine => {
         this.wines.push(wine);

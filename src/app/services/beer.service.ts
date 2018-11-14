@@ -22,6 +22,7 @@ export class BeerService {
     return this.http.get<Beer[]>(this.beerUrl)
   }
 
+  //observable to add a beer
   addBeer(beer: Beer): Observable<Beer>{
     return this.http.post<Beer>(this.beerUrl, beer);
   }

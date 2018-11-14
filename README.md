@@ -4,24 +4,24 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Development server
 
+Before run `ng serve` you need to install nodeJS and install all required npm packages by running `npm install` from the command line in the project root folder.
+
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Code scaffolding
+## Production link
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Build
+## Considerations
+I used the Angular quickstart project as a base for the application, it's written in TypeScript and uses bootstrap 4 and scss to style.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+I decided to create two components separately for reuse.
 
-## Running unit tests
+The path sctructure is as bellow:
+    |-app
+        -beer (beer component)
+        -wine (wine component)
+        -model (models to beer and wine class)
+        -services (services separately to beer and wine, where I configured services to add and get the bottles)
+        -app (app component)
+        -in-memory-data (Service to simulate a database, I decided to get it out from the path 'services' to don't forget delete)
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
